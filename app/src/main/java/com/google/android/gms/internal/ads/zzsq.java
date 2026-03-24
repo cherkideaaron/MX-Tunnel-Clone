@@ -1,0 +1,75 @@
+package com.google.android.gms.internal.ads;
+
+import java.util.Objects;
+
+/* loaded from: classes.dex */
+final class zzsq {
+    private final zzv zza;
+    private final zzv zzb;
+    private final int zzc;
+    private final int zzd;
+    private final zzql zze;
+    private final zzck zzf;
+
+    private zzsq(zzv zzvVar, zzv zzvVar2, int i, int i2, zzql zzqlVar, zzck zzckVar) {
+        this.zza = zzvVar;
+        this.zzb = zzvVar2;
+        this.zzc = i;
+        this.zzd = i2;
+        this.zze = zzqlVar;
+        this.zzf = zzckVar;
+    }
+
+    public final /* synthetic */ zzsq zza(zzql zzqlVar) {
+        return new zzsq(this.zza, this.zzb, this.zzc, this.zzd, zzqlVar, this.zzf);
+    }
+
+    public final /* synthetic */ boolean zzb(zzsq zzsqVar) {
+        return zzsqVar.zze.equals(this.zze);
+    }
+
+    public final /* synthetic */ long zzc(long j) {
+        return zzfj.zzr(j, this.zza.zzH);
+    }
+
+    public final /* synthetic */ long zzd(long j) {
+        return zzfj.zzr(j, this.zze.zzb);
+    }
+
+    public final /* synthetic */ zzrd zze() {
+        zzql zzqlVar = this.zze;
+        return new zzrd(zzqlVar.zza, zzqlVar.zzb, zzqlVar.zzc, false, false, zzqlVar.zze);
+    }
+
+    public final /* synthetic */ boolean zzf() {
+        return Objects.equals(this.zza.zzo, "audio/raw");
+    }
+
+    public final /* synthetic */ zzv zzg() {
+        return this.zza;
+    }
+
+    public final /* synthetic */ zzv zzh() {
+        return this.zzb;
+    }
+
+    public final /* synthetic */ int zzi() {
+        return this.zzc;
+    }
+
+    public final /* synthetic */ int zzj() {
+        return this.zzd;
+    }
+
+    public final /* synthetic */ zzql zzk() {
+        return this.zze;
+    }
+
+    public final /* synthetic */ zzck zzl() {
+        return this.zzf;
+    }
+
+    public /* synthetic */ zzsq(zzv zzvVar, zzv zzvVar2, int i, int i2, zzql zzqlVar, zzck zzckVar, byte[] bArr) {
+        this(zzvVar, zzvVar2, i, i2, zzqlVar, zzckVar);
+    }
+}

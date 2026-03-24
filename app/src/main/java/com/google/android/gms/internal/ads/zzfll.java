@@ -1,0 +1,27 @@
+package com.google.android.gms.internal.ads;
+
+/* loaded from: classes.dex */
+public final class zzfll implements zzflj {
+    private final String zza;
+
+    public zzfll(String str) {
+        this.zza = str;
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzflj
+    public final boolean equals(Object obj) {
+        if (obj instanceof zzfll) {
+            return this.zza.equals(((zzfll) obj).zza);
+        }
+        return false;
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzflj
+    public final int hashCode() {
+        return this.zza.hashCode();
+    }
+
+    public final String toString() {
+        return this.zza;
+    }
+}

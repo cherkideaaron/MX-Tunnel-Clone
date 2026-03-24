@@ -1,0 +1,70 @@
+package com.google.android.gms.measurement.internal;
+
+import android.util.Log;
+import com.google.android.gms.fido.fido2.api.common.UserVerificationMethods;
+import defpackage.AbstractC3264qG;
+import java.util.Objects;
+
+/* loaded from: classes2.dex */
+final class zzgr implements Runnable {
+    final /* synthetic */ int zza;
+    final /* synthetic */ String zzb;
+    final /* synthetic */ Object zzc;
+    final /* synthetic */ Object zzd;
+    final /* synthetic */ Object zze;
+    final /* synthetic */ zzgu zzf;
+
+    public zzgr(zzgu zzguVar, int i, String str, Object obj, Object obj2, Object obj3) {
+        this.zza = i;
+        this.zzb = str;
+        this.zzc = obj;
+        this.zzd = obj2;
+        this.zze = obj3;
+        Objects.requireNonNull(zzguVar);
+        this.zzf = zzguVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        zzgu zzguVar = this.zzf;
+        zzhh zzhhVarZzd = zzguVar.zzu.zzd();
+        if (!zzhhVarZzd.zzv()) {
+            Log.println(6, zzguVar.zzn(), "Persisted config not initialized. Not logging error/warn");
+            return;
+        }
+        if (zzguVar.zzr() == 0) {
+            zzic zzicVar = zzguVar.zzu;
+            boolean zZzj = zzicVar.zzc().zzj();
+            zzicVar.zzaU();
+            zzguVar.zzs(zZzj ? 'C' : 'c');
+        }
+        if (zzguVar.zzt() < 0) {
+            zzguVar.zzu.zzc().zzi();
+            zzguVar.zzu(133005L);
+        }
+        int i = this.zza;
+        char cZzr = zzguVar.zzr();
+        long jZzt = zzguVar.zzt();
+        String str = this.zzb;
+        Object obj = this.zzc;
+        Object obj2 = this.zzd;
+        Object obj3 = this.zze;
+        char cCharAt = "01VDIWEA?".charAt(i);
+        String strZzo = zzgu.zzo(true, str, obj, obj2, obj3);
+        StringBuilder sb = new StringBuilder(AbstractC3264qG.d(String.valueOf(cCharAt).length() + 1, String.valueOf(cZzr).length(), String.valueOf(jZzt).length(), 1) + strZzo.length());
+        sb.append("2");
+        sb.append(cCharAt);
+        sb.append(cZzr);
+        sb.append(jZzt);
+        sb.append(":");
+        sb.append(strZzo);
+        String string = sb.toString();
+        if (string.length() > 1024) {
+            string = str.substring(0, UserVerificationMethods.USER_VERIFY_ALL);
+        }
+        zzhf zzhfVar = zzhhVarZzd.zzb;
+        if (zzhfVar != null) {
+            zzhfVar.zza(string, 1L);
+        }
+    }
+}

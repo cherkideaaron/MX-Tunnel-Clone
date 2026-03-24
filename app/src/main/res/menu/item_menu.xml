@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_update"
+        android:title="Update"/>
+    <item
+        android:id="@+id/menu_tg"
+        android:title="Telegram"/>
+    <item
+        android:id="@+id/menu_tweak"
+        android:title="Custom Tweak"/>
+    <item
+        android:id="@+id/menu_tether"
+        android:title="VPNTether"/>
+    <item
+        android:id="@+id/menu_proxy"
+        android:title="Per-App Proxy"/>
+    <item
+        android:id="@+id/menu_hunter"
+        android:title="IP Hunter"/>
+    <item
+        android:id="@+id/menu_hwid"
+        android:title="HWID"/>
+    <item
+        android:id="@+id/menu_exit"
+        android:title="Exit"/>
+</menu>

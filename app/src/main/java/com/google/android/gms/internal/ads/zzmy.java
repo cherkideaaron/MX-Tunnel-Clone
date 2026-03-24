@@ -1,0 +1,47 @@
+package com.google.android.gms.internal.ads;
+
+import java.util.Objects;
+
+/* loaded from: classes.dex */
+public final class zzmy {
+    public final long zza;
+    public final zzbf zzb;
+    public final int zzc;
+    public final zzwk zzd;
+    public final long zze;
+    public final zzbf zzf;
+    public final int zzg;
+    public final zzwk zzh;
+    public final long zzi;
+    public final long zzj;
+
+    public zzmy(long j, zzbf zzbfVar, int i, zzwk zzwkVar, long j2, zzbf zzbfVar2, int i2, zzwk zzwkVar2, long j3, long j4) {
+        this.zza = j;
+        this.zzb = zzbfVar;
+        this.zzc = i;
+        this.zzd = zzwkVar;
+        this.zze = j2;
+        this.zzf = zzbfVar2;
+        this.zzg = i2;
+        this.zzh = zzwkVar2;
+        this.zzi = j3;
+        this.zzj = j4;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && zzmy.class == obj.getClass()) {
+            zzmy zzmyVar = (zzmy) obj;
+            if (this.zza == zzmyVar.zza && this.zzc == zzmyVar.zzc && this.zze == zzmyVar.zze && this.zzg == zzmyVar.zzg && this.zzi == zzmyVar.zzi && this.zzj == zzmyVar.zzj && Objects.equals(this.zzb, zzmyVar.zzb) && Objects.equals(this.zzd, zzmyVar.zzd) && Objects.equals(this.zzf, zzmyVar.zzf) && Objects.equals(this.zzh, zzmyVar.zzh)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Long.valueOf(this.zza), this.zzb, Integer.valueOf(this.zzc), this.zzd, Long.valueOf(this.zze), this.zzf, Integer.valueOf(this.zzg), this.zzh, Long.valueOf(this.zzi), Long.valueOf(this.zzj));
+    }
+}

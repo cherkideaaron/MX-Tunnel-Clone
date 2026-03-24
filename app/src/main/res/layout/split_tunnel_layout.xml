@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ffffff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="5dp"
+        android:src="@drawable/ic_back"
+        android:scaleType="fitXY"/>
+    <androidx.appcompat.widget.SwitchCompat
+        android:textSize="14sp"
+        android:textColor="#000000"
+        android:id="@+id/splitTunnelSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="Enable Per-App Proxy"
+        android:layout_alignBaseline="@+id/backButton"
+        android:layout_marginEnd="16dp"
+        android:layout_alignParentEnd="true"/>
+    <androidx.appcompat.widget.SwitchCompat
+        android:textSize="14sp"
+        android:textColor="#000000"
+        android:id="@+id/bypassModeSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="VPN is used only for selected apps"
+        android:layout_below="@+id/splitTunnelSwitch"
+        android:layout_marginEnd="16dp"
+        android:layout_alignParentEnd="true"/>
+    <ListView
+        android:id="@+id/app_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="0.5dp"
+        android:choiceMode="multipleChoice"
+        android:layout_below="@+id/bypassModeSwitch"/>
+</RelativeLayout>

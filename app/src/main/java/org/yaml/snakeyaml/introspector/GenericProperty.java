@@ -1,0 +1,59 @@
+package org.yaml.snakeyaml.introspector;
+
+import java.lang.reflect.Array;
+import java.lang.reflect.GenericArrayType;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+
+/* loaded from: classes2.dex */
+public abstract class GenericProperty extends Property {
+    private Class<?>[] actualClasses;
+    private boolean actualClassesChecked;
+    private Type genType;
+
+    public GenericProperty(String str, Class<?> cls, Type type) {
+        super(str, cls);
+        this.genType = type;
+        this.actualClassesChecked = type == null;
+    }
+
+    @Override // org.yaml.snakeyaml.introspector.Property
+    public Class<?>[] getActualTypeArguments() {
+        if (!this.actualClassesChecked) {
+            Type type = this.genType;
+            if (type instanceof ParameterizedType) {
+                Type[] actualTypeArguments = ((ParameterizedType) type).getActualTypeArguments();
+                if (actualTypeArguments.length > 0) {
+                    this.actualClasses = new Class[actualTypeArguments.length];
+                    for (int i = 0; i < actualTypeArguments.length; i++) {
+                        Type type2 = actualTypeArguments[i];
+                        if (!(type2 instanceof Class)) {
+                            if (!(type2 instanceof ParameterizedType)) {
+                                if (type2 instanceof GenericArrayType) {
+                                    Type genericComponentType = ((GenericArrayType) type2).getGenericComponentType();
+                                    if (genericComponentType instanceof Class) {
+                                        this.actualClasses[i] = Array.newInstance((Class<?>) genericComponentType, 0).getClass();
+                                    }
+                                }
+                                this.actualClasses = null;
+                                break;
+                            }
+                            this.actualClasses[i] = (Class) ((ParameterizedType) type2).getRawType();
+                        } else {
+                            this.actualClasses[i] = (Class) type2;
+                        }
+                    }
+                }
+            } else if (type instanceof GenericArrayType) {
+                Type genericComponentType2 = ((GenericArrayType) type).getGenericComponentType();
+                if (genericComponentType2 instanceof Class) {
+                    this.actualClasses = new Class[]{(Class) genericComponentType2};
+                }
+            } else if ((type instanceof Class) && ((Class) type).isArray()) {
+                this.actualClasses = new Class[]{getType().getComponentType()};
+            }
+            this.actualClassesChecked = true;
+        }
+        return this.actualClasses;
+    }
+}

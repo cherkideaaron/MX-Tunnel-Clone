@@ -1,0 +1,8 @@
+{
+ "ClientVersion": "166",
+ "PropagationChannelId": "EE0B7486ACAE75AA",
+ "SponsorId": "67DDC3614847FCEA",
+ "LocalHttpProxyPort": 8080,
+ "LocalSocksProxyPort": 10801,
+ "EgressRegion": ""
+}

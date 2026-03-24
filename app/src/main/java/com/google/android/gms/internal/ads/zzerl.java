@@ -1,0 +1,14 @@
+package com.google.android.gms.internal.ads;
+
+/* loaded from: classes.dex */
+final /* synthetic */ class zzerl implements zzffx {
+    static final /* synthetic */ zzerl zza = new zzerl();
+
+    private /* synthetic */ zzerl() {
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzffx
+    public final /* synthetic */ void zza(Object obj) {
+        ((com.google.android.gms.ads.internal.client.zzcv) obj).zzc();
+    }
+}

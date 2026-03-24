@@ -1,0 +1,65 @@
+package com.google.android.gms.internal.ads;
+
+/* loaded from: classes.dex */
+public final class zzifd extends zzibr implements zzidd {
+    private static final zzifd zzd;
+    private static volatile zzidk zze;
+    private int zza;
+    private String zzb = "";
+    private zzibz zzc = zzibr.zzbC();
+
+    static {
+        zzifd zzifdVar = new zzifd();
+        zzd = zzifdVar;
+        zzibr.zzbu(zzifd.class, zzifdVar);
+    }
+
+    private zzifd() {
+    }
+
+    public static zzifc zzc() {
+        return (zzifc) zzd.zzbn();
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzibr
+    public final Object zzdc(zzibq zzibqVar, Object obj, Object obj2) {
+        int iOrdinal = zzibqVar.ordinal();
+        if (iOrdinal == 0) {
+            return (byte) 1;
+        }
+        if (iOrdinal == 2) {
+            return zzibr.zzbv(zzd, "\u0004\u0003\u0000\u0000\u0001\u0003\u0003\u0000\u0001\u0000\u0001\f\u0002Ȉ\u0003'", new Object[]{"zza", "zzb", "zzc"});
+        }
+        if (iOrdinal == 3) {
+            return new zzifd();
+        }
+        byte[] bArr = null;
+        if (iOrdinal == 4) {
+            return new zzifc(bArr);
+        }
+        if (iOrdinal == 5) {
+            return zzd;
+        }
+        if (iOrdinal != 6) {
+            throw null;
+        }
+        zzidk zzibmVar = zze;
+        if (zzibmVar == null) {
+            synchronized (zzifd.class) {
+                try {
+                    zzibmVar = zze;
+                    if (zzibmVar == null) {
+                        zzibmVar = new zzibm(zzd);
+                        zze = zzibmVar;
+                    }
+                } finally {
+                }
+            }
+        }
+        return zzibmVar;
+    }
+
+    public final /* synthetic */ void zze(int i) {
+        this.zza = 15;
+    }
+}

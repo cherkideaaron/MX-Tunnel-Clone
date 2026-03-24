@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="5dp"
+        android:src="@drawable/ic_back"
+        android:scaleType="fitXY"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:textSize="12sp"
+            android:textColor="#000000"
+            android:id="@+id/currentIPTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Current Local IP: 127.0.0.1"/>
+        <TextView
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Enter IP Range:"/>
+        <EditText
+            android:id="@+id/ipInputEditText"
+            android:background="@drawable/server_frame"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Enter IPs (e.g., 10;10.150;100.43)"
+            android:maxLines="1"
+            android:maxLength="100"
+            android:inputType="text"/>
+        <Button
+            android:textColor="#000000"
+            android:layout_gravity="center"
+            android:id="@+id/toggleAirplaneModeButton"
+            android:background="@drawable/server_frame"
+            android:padding="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Start IP Hunt"/>
+        <ListView
+            android:id="@+id/logListView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            android:transcriptMode="alwaysScroll"/>
+    </LinearLayout>
+</LinearLayout>

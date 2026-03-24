@@ -1,0 +1,270 @@
+package com.github.mikephil.charting.charts;
+
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.util.AttributeSet;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.GestureDetector;
+import android.view.ViewConfiguration;
+import defpackage.AbstractC0255Oe;
+import defpackage.AbstractC2831iL;
+import defpackage.Br;
+import defpackage.C0155Ig;
+import defpackage.C0463a7;
+import defpackage.C2827iH;
+import defpackage.C2832iM;
+import defpackage.C3121nk;
+import defpackage.C3365s9;
+import defpackage.C3456tt;
+import defpackage.C3473u9;
+import defpackage.C3510ut;
+import defpackage.C3704yO;
+import defpackage.C3758zO;
+import defpackage.Cr;
+import defpackage.Dr;
+import defpackage.HO;
+import defpackage.IO;
+import defpackage.W6;
+import defpackage.X6;
+import defpackage.Xr;
+import defpackage.Yr;
+import defpackage.Zr;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.achartengine.renderer.DefaultRenderer;
+
+/* loaded from: classes.dex */
+public class LineChart extends W6 implements Zr {
+    public LineChart(Context context, AttributeSet attributeSet) {
+        super(context, attributeSet);
+        this.a = false;
+        this.b = null;
+        this.c = true;
+        this.d = true;
+        this.e = 0.9f;
+        this.f = new C2827iH(0);
+        this.p = true;
+        this.t = "No chart data available.";
+        C2832iM c2832iM = new C2832iM();
+        this.x = c2832iM;
+        this.z = 0.0f;
+        this.A = 0.0f;
+        this.B = 0.0f;
+        this.C = 0.0f;
+        this.D = false;
+        this.F = 0.0f;
+        this.G = new ArrayList();
+        this.H = false;
+        setWillNotDraw(false);
+        this.y = new C3365s9();
+        Context context2 = getContext();
+        DisplayMetrics displayMetrics = AbstractC2831iL.a;
+        if (context2 == null) {
+            AbstractC2831iL.b = ViewConfiguration.getMinimumFlingVelocity();
+            AbstractC2831iL.c = ViewConfiguration.getMaximumFlingVelocity();
+            Log.e("MPChartLib-Utils", "Utils.init(...) PROVIDED CONTEXT OBJECT IS NULL");
+        } else {
+            ViewConfiguration viewConfiguration = ViewConfiguration.get(context2);
+            AbstractC2831iL.b = viewConfiguration.getScaledMinimumFlingVelocity();
+            AbstractC2831iL.c = viewConfiguration.getScaledMaximumFlingVelocity();
+            AbstractC2831iL.a = context2.getResources().getDisplayMetrics();
+        }
+        this.F = AbstractC2831iL.c(500.0f);
+        C0155Ig c0155Ig = new C0155Ig();
+        c0155Ig.g = Paint.Align.RIGHT;
+        c0155Ig.e = AbstractC2831iL.c(8.0f);
+        this.q = c0155Ig;
+        Br br = new Br();
+        br.g = new Cr[0];
+        br.h = 1;
+        br.i = 3;
+        br.j = 1;
+        br.k = false;
+        br.l = 0.0f;
+        br.m = 0.0f;
+        br.n = new ArrayList(16);
+        br.o = new ArrayList(16);
+        br.p = new ArrayList(16);
+        br.e = AbstractC2831iL.c(10.0f);
+        br.b = AbstractC2831iL.c(5.0f);
+        br.c = AbstractC2831iL.c(3.0f);
+        this.r = br;
+        Dr dr = new Dr(c2832iM);
+        dr.e = new ArrayList(16);
+        dr.f = new Paint.FontMetrics();
+        dr.g = new Path();
+        dr.d = br;
+        Paint paint = new Paint(1);
+        dr.b = paint;
+        paint.setTextSize(AbstractC2831iL.c(9.0f));
+        paint.setTextAlign(Paint.Align.LEFT);
+        Paint paint2 = new Paint(1);
+        dr.c = paint2;
+        Paint.Style style = Paint.Style.FILL;
+        paint2.setStyle(style);
+        this.u = dr;
+        C3704yO c3704yO = new C3704yO();
+        c3704yO.y = 1;
+        c3704yO.z = 1;
+        c3704yO.c = AbstractC2831iL.c(4.0f);
+        this.o = c3704yO;
+        this.m = new Paint(1);
+        Paint paint3 = new Paint(1);
+        this.n = paint3;
+        paint3.setColor(Color.rgb(247, 189, 51));
+        Paint paint4 = this.n;
+        Paint.Align align = Paint.Align.CENTER;
+        paint4.setTextAlign(align);
+        this.n.setTextSize(AbstractC2831iL.c(12.0f));
+        if (this.a) {
+            Log.i("", "Chart.init()");
+        }
+        this.W = new HO(1);
+        this.a0 = new HO(2);
+        this.d0 = new C3121nk(c2832iM);
+        this.e0 = new C3121nk(c2832iM);
+        this.b0 = new IO(c2832iM, this.W, this.d0);
+        this.c0 = new IO(c2832iM, this.a0, this.e0);
+        C3704yO c3704yO2 = this.o;
+        C3758zO c3758zO = new C3758zO(c2832iM, this.d0, c3704yO2);
+        Paint paint5 = c3758zO.e;
+        c3758zO.i = new Path();
+        c3758zO.j = new float[2];
+        c3758zO.k = new RectF();
+        c3758zO.l = new float[2];
+        c3758zO.m = new RectF();
+        c3758zO.n = new float[4];
+        c3758zO.o = new Path();
+        c3758zO.h = c3704yO2;
+        paint5.setColor(DefaultRenderer.BACKGROUND_COLOR);
+        paint5.setTextAlign(align);
+        paint5.setTextSize(AbstractC2831iL.c(10.0f));
+        this.f0 = c3758zO;
+        C3473u9 c3473u9 = new C3473u9();
+        c3473u9.b = new ArrayList();
+        c3473u9.a = this;
+        setHighlighter(c3473u9);
+        Matrix matrix = c2832iM.a;
+        X6 x6 = new X6();
+        x6.a = 0;
+        x6.d = this;
+        x6.c = new GestureDetector(getContext(), x6);
+        x6.e = new Matrix();
+        x6.f = new Matrix();
+        x6.m = C3510ut.b(0.0f, 0.0f);
+        x6.n = C3510ut.b(0.0f, 0.0f);
+        x6.o = 1.0f;
+        x6.p = 1.0f;
+        x6.q = 1.0f;
+        x6.t = 0L;
+        x6.u = C3510ut.b(0.0f, 0.0f);
+        x6.v = C3510ut.b(0.0f, 0.0f);
+        x6.e = matrix;
+        x6.w = AbstractC2831iL.c(3.0f);
+        x6.x = AbstractC2831iL.c(3.5f);
+        this.s = x6;
+        Paint paint6 = new Paint();
+        this.Q = paint6;
+        paint6.setStyle(style);
+        this.Q.setColor(Color.rgb(240, 240, 240));
+        Paint paint7 = new Paint();
+        this.R = paint7;
+        Paint.Style style2 = Paint.Style.STROKE;
+        paint7.setStyle(style2);
+        this.R.setColor(DefaultRenderer.BACKGROUND_COLOR);
+        this.R.setStrokeWidth(AbstractC2831iL.c(1.0f));
+        C3365s9 c3365s9 = this.y;
+        Xr xr = new Xr(c2832iM);
+        xr.b = c3365s9;
+        Paint paint8 = new Paint(1);
+        xr.c = paint8;
+        paint8.setStyle(style);
+        new Paint(4);
+        Paint paint9 = new Paint(1);
+        xr.e = paint9;
+        paint9.setColor(Color.rgb(63, 63, 63));
+        paint9.setTextAlign(align);
+        paint9.setTextSize(AbstractC2831iL.c(9.0f));
+        Paint paint10 = new Paint(1);
+        xr.d = paint10;
+        paint10.setStyle(style2);
+        paint10.setStrokeWidth(2.0f);
+        paint10.setColor(Color.rgb(255, 187, 115));
+        xr.f = new C0463a7(xr);
+        xr.g = new Path();
+        xr.l = Bitmap.Config.ARGB_8888;
+        xr.m = new Path();
+        xr.n = new Path();
+        xr.o = new float[4];
+        xr.p = new Path();
+        xr.q = new HashMap();
+        xr.r = new float[2];
+        xr.h = this;
+        Paint paint11 = new Paint(1);
+        xr.i = paint11;
+        paint11.setStyle(style);
+        paint11.setColor(-1);
+        this.v = xr;
+        this.I = 100;
+        this.J = false;
+        this.K = false;
+        this.L = true;
+        this.M = true;
+        this.N = true;
+        this.O = true;
+        this.P = true;
+        this.S = false;
+        this.T = false;
+        this.U = 15.0f;
+        this.V = false;
+        this.g0 = 0L;
+        this.h0 = 0L;
+        this.i0 = new RectF();
+        new Matrix();
+        new Matrix();
+        this.j0 = new Matrix();
+        new Matrix();
+        C3456tt c3456tt = (C3456tt) C3456tt.d.b();
+        c3456tt.b = 0.0d;
+        c3456tt.c = 0.0d;
+        this.k0 = c3456tt;
+        C3456tt c3456tt2 = (C3456tt) C3456tt.d.b();
+        c3456tt2.b = 0.0d;
+        c3456tt2.c = 0.0d;
+        this.l0 = c3456tt2;
+        this.m0 = new float[2];
+    }
+
+    @Override // defpackage.Zr
+    public Yr getLineData() {
+        return (Yr) this.b;
+    }
+
+    @Override // defpackage.AbstractC3311r9, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        AbstractC0255Oe abstractC0255Oe = this.v;
+        if (abstractC0255Oe != null && (abstractC0255Oe instanceof Xr)) {
+            Xr xr = (Xr) abstractC0255Oe;
+            Canvas canvas = xr.k;
+            if (canvas != null) {
+                canvas.setBitmap(null);
+                xr.k = null;
+            }
+            WeakReference weakReference = xr.j;
+            if (weakReference != null) {
+                ((Bitmap) weakReference.get()).recycle();
+                xr.j.clear();
+                xr.j = null;
+            }
+        }
+        super.onDetachedFromWindow();
+    }
+}

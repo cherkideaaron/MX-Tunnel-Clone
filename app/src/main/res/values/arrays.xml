@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="compression_array">
+        <item>No</item>
+        <item>Full</item>
+        <item>Downlink only</item>
+    </array>
+    <array name="compression_values">
+        <item>no</item>
+        <item>yes</item>
+        <item>asym</item>
+    </array>
+    <array name="conn_timeout_array">
+        <item>15 seconds</item>
+        <item>30 seconds</item>
+        <item>1 minute</item>
+        <item>2 minutes</item>
+        <item>Continuously retry</item>
+    </array>
+    <array name="conn_timeout_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>120</item>
+        <item>0</item>
+    </array>
+    <array name="ipv6_array">
+        <item>Combined IPv4/IPv6 tunnel</item>
+        <item>IPv4-only tunnel</item>
+        <item>No preference</item>
+    </array>
+    <array name="ipv6_values">
+        <item>yes</item>
+        <item>no</item>
+        <item>default</item>
+    </array>
+    <array name="tls_version_min_override_array">
+        <item>Disabled</item>
+        <item>Profile Default</item>
+        <item>TLS 1.0</item>
+        <item>TLS 1.1</item>
+        <item>TLS 1.2</item>
+    </array>
+    <array name="tls_version_min_override_values">
+        <item>disabled</item>
+        <item>default</item>
+        <item>tls_1_0</item>
+        <item>tls_1_1</item>
+        <item>tls_1_2</item>
+    </array>
+    <array name="vpn_proto_array">
+        <item>Adaptive</item>
+        <item>UDP</item>
+        <item>TCP</item>
+    </array>
+    <array name="vpn_proto_values">
+        <item>adaptive</item>
+        <item>udp</item>
+        <item>tcp</item>
+    </array>
+</resources>

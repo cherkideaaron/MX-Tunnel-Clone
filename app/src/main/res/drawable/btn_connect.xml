@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="@color/prince_btnStart"
+                android:endColor="@color/prince_btnEnd"
+                android:angle="90"/>
+            <corners android:radius="100dp"/>
+        </shape>
+    </item>
+    <item
+        android:gravity="center"
+        android:height="48dp"
+        android:width="48dp">
+        <bitmap android:src="@drawable/switcher"/>
+    </item>
+</layer-list>

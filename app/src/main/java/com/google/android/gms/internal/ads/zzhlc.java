@@ -1,0 +1,29 @@
+package com.google.android.gms.internal.ads;
+
+/* loaded from: classes.dex */
+public final class zzhlc implements zzhlg {
+    private final zzhye zza;
+    private final zzhqf zzb;
+
+    private zzhlc(zzhqf zzhqfVar, zzhye zzhyeVar) {
+        this.zzb = zzhqfVar;
+        this.zza = zzhyeVar;
+    }
+
+    public static zzhlc zza(zzhqf zzhqfVar) {
+        return new zzhlc(zzhqfVar, zzhln.zza(zzhqfVar.zza()));
+    }
+
+    public static zzhlc zzb(zzhqf zzhqfVar) {
+        return new zzhlc(zzhqfVar, zzhln.zzb(zzhqfVar.zza()));
+    }
+
+    public final zzhqf zzc() {
+        return this.zzb;
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzhlg
+    public final zzhye zzf() {
+        return this.zza;
+    }
+}

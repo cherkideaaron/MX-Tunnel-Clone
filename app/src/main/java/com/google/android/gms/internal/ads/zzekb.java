@@ -1,0 +1,20 @@
+package com.google.android.gms.internal.ads;
+
+/* loaded from: classes.dex */
+public final class zzekb {
+    private final zzfsj zza;
+    private final zzfsl zzb;
+
+    public zzekb(zzfsj zzfsjVar, zzfsl zzfslVar) {
+        this.zza = zzfsjVar;
+        this.zzb = zzfslVar;
+    }
+
+    public final zzfsj zza() {
+        return this.zza;
+    }
+
+    public final boolean zzb() {
+        return this.zzb.zzi() == zzfsm.HTML;
+    }
+}

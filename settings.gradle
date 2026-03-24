@@ -1,0 +1,3 @@
+rootProject.name = 'Mx Tunnel PRO'
+
+include 'app'

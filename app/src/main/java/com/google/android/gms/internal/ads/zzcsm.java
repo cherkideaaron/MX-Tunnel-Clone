@@ -1,0 +1,27 @@
+package com.google.android.gms.internal.ads;
+
+import java.util.Map;
+import java.util.Objects;
+
+/* loaded from: classes.dex */
+final class zzcsm implements zzboh {
+    final /* synthetic */ zzcsn zza;
+
+    public zzcsm(zzcsn zzcsnVar) {
+        Objects.requireNonNull(zzcsnVar);
+        this.zza = zzcsnVar;
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzboh
+    public final void zza(Object obj, Map map) {
+        zzcsn zzcsnVar = this.zza;
+        if (zzcsnVar.zze(map)) {
+            zzcsnVar.zzf().execute(new Runnable() { // from class: com.google.android.gms.internal.ads.zzcsl
+                @Override // java.lang.Runnable
+                public final /* synthetic */ void run() {
+                    this.zza.zza.zzg().zzm();
+                }
+            });
+        }
+    }
+}
